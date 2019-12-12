@@ -15,6 +15,8 @@
 		CBB8E87823A258E400FFF056 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB8E87623A258E400FFF056 /* LaunchScreen.storyboard */; };
 		CBB8E88323A258E500FFF056 /* AccesWifiInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8E88223A258E500FFF056 /* AccesWifiInfoTests.swift */; };
 		CBB8E88E23A258E500FFF056 /* AccesWifiInfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8E88D23A258E500FFF056 /* AccesWifiInfoUITests.swift */; };
+		CBB8E89D23A25BFE00FFF056 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8E89C23A25BFD00FFF056 /* ViewControllerPresenter.swift */; };
+		CBB8E8A023A25DCE00FFF056 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB8E89F23A25DCE00FFF056 /* NetworkExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,9 @@
 		CBB8E88923A258E500FFF056 /* AccesWifiInfoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccesWifiInfoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB8E88D23A258E500FFF056 /* AccesWifiInfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccesWifiInfoUITests.swift; sourceTree = "<group>"; };
 		CBB8E88F23A258E500FFF056 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBB8E89B23A25BBA00FFF056 /* AccesWifiInfo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AccesWifiInfo.entitlements; sourceTree = "<group>"; };
+		CBB8E89C23A25BFD00FFF056 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
+		CBB8E89F23A25DCE00FFF056 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBB8E8A023A25DCE00FFF056 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +89,7 @@
 				CBB8E88123A258E500FFF056 /* AccesWifiInfoTests */,
 				CBB8E88C23A258E500FFF056 /* AccesWifiInfoUITests */,
 				CBB8E86923A258E300FFF056 /* Products */,
+				CBB8E89E23A25DCE00FFF056 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,8 +106,10 @@
 		CBB8E86A23A258E300FFF056 /* AccesWifiInfo */ = {
 			isa = PBXGroup;
 			children = (
+				CBB8E89B23A25BBA00FFF056 /* AccesWifiInfo.entitlements */,
 				CBB8E86B23A258E300FFF056 /* AppDelegate.swift */,
 				CBB8E86D23A258E300FFF056 /* SceneDelegate.swift */,
+				CBB8E89C23A25BFD00FFF056 /* ViewControllerPresenter.swift */,
 				CBB8E86F23A258E300FFF056 /* ViewController.swift */,
 				CBB8E87123A258E300FFF056 /* Main.storyboard */,
 				CBB8E87423A258E400FFF056 /* Assets.xcassets */,
@@ -126,6 +135,14 @@
 				CBB8E88F23A258E500FFF056 /* Info.plist */,
 			);
 			path = AccesWifiInfoUITests;
+			sourceTree = "<group>";
+		};
+		CBB8E89E23A25DCE00FFF056 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBB8E89F23A25DCE00FFF056 /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +279,7 @@
 				CBB8E87023A258E300FFF056 /* ViewController.swift in Sources */,
 				CBB8E86C23A258E300FFF056 /* AppDelegate.swift in Sources */,
 				CBB8E86E23A258E300FFF056 /* SceneDelegate.swift in Sources */,
+				CBB8E89D23A25BFE00FFF056 /* ViewControllerPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,8 +452,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3847847G6R;
+				CODE_SIGN_ENTITLEMENTS = AccesWifiInfo/AccesWifiInfo.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AccesWifiInfo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -443,6 +462,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ashish.fs.AccesWifiInfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -452,8 +472,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3847847G6R;
+				CODE_SIGN_ENTITLEMENTS = AccesWifiInfo/AccesWifiInfo.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AccesWifiInfo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -461,6 +482,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ashish.fs.AccesWifiInfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
